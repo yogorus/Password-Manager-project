@@ -1,0 +1,49 @@
+/* Size for brand */
+nav .navbar-brand
+{   
+    font-size: xx-large;
+}
+
+.red
+{
+    color: red;
+    font-size: 1.5rem;
+}
+
+li
+{
+    font-size: 1.2rem;
+}
+
+.card-text
+{
+    font-size: 1.5rem;
+}
+
+#box
+{
+    background-color: black;
+}
+
+#pwd
+{   
+    color: white;
+    visibility: hidden;
+}
+
+#edit
+{
+    display: inline-block;
+}
+
+body
+{
+    background-color: rgb(40, 40, 41);
+}
+
+.card
+{
+    width: 50%;
+    margin: auto;
+}
+

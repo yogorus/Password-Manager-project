@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add password
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <form action="/add" method="post" class='card p-3 bg-light border-dark w-auto'>
+            <h1>Fill this form to add new password</h1>
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title<span class="red">*</span></label>
+                    <input autocomplete="off" class="form-control mx-auto w-auto" id="title" name="title" placeholder="Title" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="link" class="form-label">Link</label>
+                    <input autocomplete="off" class="form-control mx-auto w-auto" id="link" name="link" placeholder="URL format link(optional)" type="url">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password<span class="red">*</span></label>
+                    <input autocomplete="off" class="form-control mx-auto w-auto mb-1" id="password" name="password" placeholder="Password" type="password" required>
+                    <button type="button" class="btn btn-outline-dark" name="generate" id="generate">Generate</button>
+                    <input type="checkbox" id="show" name="show">
+                    <label for="show">Show password</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea autocomplete="off" class="form-control mx-auto w-auto" id="description" name="description" placeholder="Description(optional)" type="text" rows="4"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Add</button>    
+            </div>
+        </form>
+    </div>
+
+    {% block javascript %}
+        <script src="{{ url_for('static', filename='form.js') }}"></script>
+    {% endblock %}
+
+{% endblock %}

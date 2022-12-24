@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Passwords
+{% endblock %}
+
+{% block main %}
+<input autocomplete="off" class="form-control w-auto mx-auto border-dark" autofocus placeholder="Search by title" type="search" id="input">
+    <div id="content">
+
+    </div>
+    {% block javascript %}
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+    {% endblock %}
+{% endblock %}

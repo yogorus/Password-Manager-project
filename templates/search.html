@@ -1,0 +1,47 @@
+{% if not passwords %}
+    <h1>No results</h1>
+{% endif %}
+{% for item in passwords %}
+<div class="card align-items-center bg-light border-dark mb-1">
+    <div class="card-body">
+        <h2 class="card-title">{{ item.title }}</h2>
+    </div>
+    <ul class="list-group list-group-flush mb-1">
+        {% if item.link %}
+            <li class="list-group-item bg-light">
+                <a href="{{ item.link }}" class="card-link">Link</a>
+            </li>
+        {% endif %}
+        <li class="list-group-item bg-light">
+            <h3 class="card-title">Password</h3>
+            <div class="card-body mb-1" id="box">
+                <p class="card-text" id="pwd">{{ item.password }}</p>
+            </div>
+            <button class="btn btn-primary" id="copy">Copy</button>
+        </li>
+    </ul>
+    {% if item.description %}
+        <div class="card-body">
+            <h2 class="card-title">Description</h2>
+            <p class="card-text">{{ item.description }}</p>
+        </div>
+    {% endif %}
+    <div class="card-body">
+        <h3 class="card-title">Created</h3>
+        <p class="card-text">{{ item.date }}</p>
+    </div>
+    <div class="card-block p-2">
+        <div class="row">
+            <div class="col">
+                <a href="/edit/{{ item.id }}" class="btn btn-outline-secondary" role="button">Edit</a>
+            </div>
+            <div class="col">
+                <form aciton="/" method="post">
+                    <input name="id" type="hidden" value="{{ item.id }}">
+                    <button name="btn" class="btn btn-outline-danger" type="submit" value="Delete">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
